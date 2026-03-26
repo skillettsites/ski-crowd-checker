@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { TrackPageview } from "@/components/TrackPageview";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -28,7 +29,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="antialiased">{children}</body>
+      <body className="antialiased">
+        <TrackPageview />
+        {children}
+      </body>
     </html>
   );
 }
